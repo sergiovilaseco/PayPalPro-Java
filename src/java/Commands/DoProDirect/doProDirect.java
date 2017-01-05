@@ -34,6 +34,7 @@ public class doProDirect implements Command {
 
             String version = "204.0";
 
+            
             HttpsURLConnection con = (HttpsURLConnection) url.openConnection();
 
             String METHOD = "DoDirectPayment";
