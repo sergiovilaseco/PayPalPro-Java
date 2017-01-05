@@ -28,9 +28,9 @@ public class doProDirect implements Command {
         try {
             URL url = new URL("https://api-3t.sandbox.paypal.com/nvp");
 
-            String API_UserName = "PayPalPro-merchant_api1.fake.com";
-            String API_Password = "J5G3FZTPVXX9XHPJ";
-            String API_Signature = "AiPC9BjkCyDFQXbSkoZcgqH3hpacALgR5lX7kDRGFyW6QS7Mxdcmk9Hs";
+            String API_UserName = "PayPal-Pro-User_api1.fake.com";
+            String API_Password = "PayPal-Pro-Password";
+            String API_Signature = "PayPal-Pro-Signature";
 
             String version = "204.0";
 
@@ -38,7 +38,7 @@ public class doProDirect implements Command {
 
             String METHOD = "DoDirectPayment";
             String PAYMENTACTION = request.getParameter("PAYMENTACTION");
-            //String IPADDRESS         = request.getParameter("IPADDRESS");
+            //String IPADDRESS         = request.getParameter("IPADDRESS");     
             String CURRENCYCODE = request.getParameter("CURRENCYCODE");
             String AMT = request.getParameter("AMT");
             String CREDITCARDTYPE = request.getParameter("CREDITCARDTYPE");
@@ -67,10 +67,8 @@ public class doProDirect implements Command {
             output.writeBytes(postData);
             output.close();
 
-            int code = con.getResponseCode(); // 200 = HTTP_OK
-//            System.out.println("Response    (Code):" + code);
-//            System.out.println("Response (Message):" + con.getResponseMessage());
-
+            int code = con.getResponseCode();
+            
             if (con.getResponseCode() == 200){
                 DataInputStream input = new DataInputStream(con.getInputStream());
             int c;
