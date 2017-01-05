@@ -1,0 +1,59 @@
+
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+
+<html>
+<head>
+    <title>PayPal Pro Direct</title>
+</head>
+<body>
+	
+	<div class="panel panel-default bootstrap-basic center-block" style="width: 60%; margin-left: 20%">
+		<form  action="processRequest" id="submitForm" method="post" style="margin: 0 30px 0 30px"><br>
+		
+			<img alt="phone" src="./images/phone.jpg" class="thumbnail" style="width: 25%">
+			<label for='price'>Price: &#163;300 GBP</label><br>
+			<input type="hidden" id="AMT" name="AMT" value="300.00" class="form-control"/>
+			<input type="hidden" id="CURRENCYCODE" name="CURRENCYCODE" value="GBP" class="form-control"/>
+			<!-- <input type="hidden" id="IPADDRESS" name="IPADDRESS" value="<?php echo $serverName?>" class="form-control"/> -->			
+			<input type="hidden" id="PAYMENTACTION" name="PAYMENTACTION" value="Sale" class="form-control" />
+                        <input type="hidden" id="action" name="action" value="doProDirect" class="form-control"/>
+		
+			<label for='FIRSTNAME'> Card holder:</label><br>
+			<input type="text" name="FIRSTNAME" value="Sergio" class="form-control"/><br>
+			<label for='LASTNAME'>Last Name:</label><br>
+			<input type="text" name="LASTNAME" value="Vilaseco-Romero" class="form-control"/><br>
+			<label for='STREET'>Address:</label><br>
+			<input type="text" name="STREET" value="24 my street" class="form-control"/><br>
+			<label for='CITY'>City:</label><br>
+			<input type="text" name="CITY" value="Dundalk" class="form-control"/><br>
+			<label for='STATE'>County</label><br>
+			<input type="text" name="STATE" value="Louth" class="form-control"/><br>
+			<label for='COUNTRYCODE'>Country</label><br>
+			<input type="text" name="COUNTRYCODE" value="GB" class="form-control"/><br>
+			
+			<label for='CREDITCARDTYPE'> Card type:</label><br>
+			<select name="CREDITCARDTYPE" class="form-control"/>
+				<option value="Visa">VISA</option>
+				<option value="MasterCard">MasterCard</option> 
+			</select><br>
+			<label for='ACCT'>Card number:</label><br>
+			<input type="text" name="ACCT" value="4916063466642231" class="form-control"/><br>
+			<label for='EXPDATE'>Expiring date:</label><br>
+			<input type="text" name="EXPDATE" value="042019 " class="form-control"/>
+			<label for='CVV2'>CVV2:</label>
+			<input type="text" name="CVV2" value="123" class="form-control"/>
+			
+						
+			<br><br>
+			<input type="image" name="submit" value="Pay now" class="btn btn-success" />
+			<br><br>
+			<a href='../Pro.html' class="btn btn-warning">Back</a>	
+			
+		</form>
+		<div style="text-align: center">
+			<div id="paypal-container" style="margin: 0 45% 5% 45%"></div>
+		</div>
+
+	</div>
+</body>
+</html>
